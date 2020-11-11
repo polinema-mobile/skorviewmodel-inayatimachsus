@@ -39,6 +39,9 @@ public class ScoreFragment extends Fragment {
 		FragmentScoreBinding binding = DataBindingUtil
 			.inflate(inflater, R.layout.fragment_score, container, false);
 		viewModel = new ViewModelProvider(requireActivity()).get(ScoreViewModel.class);
+		binding.setFragment(this);
+		binding.setLifecycleOwner(this);
+		binding.setVm(viewModel);
 		return binding.getRoot();
 	}
 
